@@ -124,11 +124,14 @@ jobs:
           cache: maven
 
       - name: Run OWASP Dependency Check
+        env:
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
         run: |
           mvn org.owasp:dependency-check-maven:check \
             -DfailBuildOnCVSS=7 \
             -Dformat=HTML \
-            -DoutputDirectory=dependency-check-report
+            -DoutputDirectory=dependency-check-report \
+            -DnvdApiKey=$NVD_API_KEY
         working-directory: my-app
         continue-on-error: true  # We upload the report even if it fails
 
