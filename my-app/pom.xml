@@ -18,6 +18,9 @@
 
     <properties>
         <java.version>17</java.version>
+        <!-- Security overrides to clear OWASP CVSS >= 7 -->
+        <tomcat.version>10.1.38</tomcat.version>
+        <log4j2.version>2.24.3</log4j2.version>
         <!-- SonarCloud properties -->
         <sonar.organization>hitansu2004</sonar.organization>
         <sonar.projectKey>Hitansu2004_devops-poc-4</sonar.projectKey>
