@@ -140,5 +140,5 @@ jobs:
         if: always()  # Always upload even if scan found issues
         with:
           name: owasp-security-report-${{ github.run_number }}
-          path: my-app/dependency-check-report/
+          path: my-app/target/dependency-check-report.html
           retention-days: 30
